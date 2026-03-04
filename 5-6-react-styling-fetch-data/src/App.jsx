@@ -233,7 +233,7 @@ export default function App() {
      ========================================================= */
   useEffect(() => {
     // TODO 2.2: Implement filtering users here (see lab instructions)
-        if (searchTerm === "") {
+        if (!searchTerm.trim()) {
       setFilteredUsers(users);
     } else {
       const filtered = users.filter((user) =>
