@@ -232,8 +232,10 @@ export default function App() {
      Dependency array MUST be: [searchTerm, users]
      ========================================================= */
   useEffect(() => {
-   if (searchTerm === "") {
-  setFilteredUsers(users);   // ← grader looks for this exact call in the empty branch
+     if (searchTerm === "") {
+    setFilteredUsers(users);  
+    return;                   
+ 
    } else {
     const filtered = users.filter((user) =>
      user.name.toLowerCase().includes(searchTerm.toLowerCase())
